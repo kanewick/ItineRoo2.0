@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\ItineRoo.WebAPI\\ItineRoo.WebAPI.csproj": {}
+    "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\ItineRoo.WebAPI\\ItineRoo.WebAPI.csproj": {
+    "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\ItineRoo.WebAPI\\ItineRoo.WebAPI.csproj",
-        "projectName": "ItineRoo.WebAPI",
-        "projectPath": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\ItineRoo.WebAPI\\ItineRoo.WebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Kallen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\ItineRoo.WebAPI\\obj\\",
+        "outputPath": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,32 +44,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[6.0.0, )"
-            },
-            "Swashbuckle.AspNetCore": {
-              "target": "Package",
-              "version": "[6.2.3, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -82,9 +56,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

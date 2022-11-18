@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t/RQ8z8pF6/1ZHZl8h2kf2J9M3R4KOpqb+sil2olfg/kZz5XGY8xrl3DqrQKsKAe7eA0RQUWMSUg2iggTmAIbQ==",
+  "dgSpecHash": "dkkrNh7Vl6K04zPqshC2lIGOflUE+F8urmJJtiH2eEJZEd190o2JoIjcs/wWRJPK5aDVas5PZ8BLzijrFZCu1w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\itineroo.webapi\\ItineRoo.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\Kallen\\Documents\\inetpub\\dev\\ItineRoo\\ItineRoo\\ItineRoo.WebAPI\\ItineRoo.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kallen\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Kallen\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
