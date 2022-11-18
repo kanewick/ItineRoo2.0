@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItineRoo.WebAPI", "ItineRoo.WebAPI\ItineRoo.WebAPI.csproj", "{C6898BFA-15FF-4AA0-9782-3F7EA4D5B037}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItineRoo.WebAPI", "ItineRoo.WebAPI\ItineRoo.WebAPI.csproj", "{C06C5D5B-5854-433C-822D-50BFC611E553}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C6898BFA-15FF-4AA0-9782-3F7EA4D5B037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6898BFA-15FF-4AA0-9782-3F7EA4D5B037}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6898BFA-15FF-4AA0-9782-3F7EA4D5B037}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6898BFA-15FF-4AA0-9782-3F7EA4D5B037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06C5D5B-5854-433C-822D-50BFC611E553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06C5D5B-5854-433C-822D-50BFC611E553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06C5D5B-5854-433C-822D-50BFC611E553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06C5D5B-5854-433C-822D-50BFC611E553}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D69121C2-6C27-45DC-9E51-C8A1D15104D2}
+		SolutionGuid = {B680F00D-DC70-4884-8FDC-AD1AC3099580}
 	EndGlobalSection
 EndGlobal
