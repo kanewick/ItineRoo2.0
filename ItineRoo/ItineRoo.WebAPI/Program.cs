@@ -1,3 +1,4 @@
+using DataAccess.Services;
 using ItineRoo.WebAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ItineRooContext>(x => 
 x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddSingleton<IUserService, UserService>();
+
 
 var app = builder.Build();
 
