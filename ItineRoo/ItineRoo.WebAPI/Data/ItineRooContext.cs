@@ -1,4 +1,4 @@
-﻿using ItineRoo.WebAPI.Data.Entities;
+﻿using ItineRoo.WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ItineRoo.WebAPI.Data
