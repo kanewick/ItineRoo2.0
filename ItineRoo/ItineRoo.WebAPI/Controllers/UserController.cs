@@ -71,7 +71,7 @@ namespace ItineRoo.WebAPI.Controllers
                 // Create the hashed password and salt
                 if (!_tokenService.CreatePasswordHash(request.Password,
                      out byte[] passwordHash,
-                     out byte[] passwordSalt)) return Problem("Hashed Password could not be created.");
+                     out byte[] passwordSalt)) return BadRequest("Hashed Password could not be created.");
 
                 // Create the user with the verification token that needs to be verified
                 var user = new User
@@ -84,7 +84,7 @@ namespace ItineRoo.WebAPI.Controllers
                 };
 
                 // Create the user
-                if (!_userService.CreateUser(user)) return Problem("User could not be created");
+                if (!_userService.CreateUser(user)) return BadRequest("User could not be created");
 
                 return Ok("User successfully created!");
             }
@@ -165,7 +165,7 @@ namespace ItineRoo.WebAPI.Controllers
                 user.VerifiedAt = DateTime.Now;
 
                 // Update the user
-                if (!_userService.UpdateUser(user)) return Problem("User could not be updated");
+                if (!_userService.UpdateUser(user)) return BadRequest("User could not be updated");
 
                 return Ok("Verified");
 
