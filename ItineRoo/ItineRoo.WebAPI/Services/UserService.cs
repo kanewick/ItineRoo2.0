@@ -23,7 +23,7 @@ namespace ItineRoo.WebAPI.Services
         /// Save - Save Context Changes
         /// </summary>
         /// <returns></returns>
-        public Task Save() => _context.SaveChangesAsync();
+        public int Save() => _context.SaveChanges();
 
         /// <summary>
         /// FindUserByEmailAsync - Gets user by email

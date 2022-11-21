@@ -1,0 +1,27 @@
+﻿@model AccountModel
+@*
+
+*@
+@{
+}
+<div class="container">
+    <div class="col-12">
+        <div class="blmd-continer">
+            <form class="clearfix form-hidden" id="Register-form" method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="Verify">
+                <h1>Verify</h1>
+                <div class="col-md-12">
+                    <div class="blmd-form">
+                        <div class="blmd-line">
+                            <input type="text" asp-for="UserVerificationModel.Token" autocomplete="off" id="token" class="form-control">
+                            <label class="blmd-label">Token</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <input type="submit" class="btn btn-blmd ripple-effect btn-warning btn-lg btn-block" />
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+</div>

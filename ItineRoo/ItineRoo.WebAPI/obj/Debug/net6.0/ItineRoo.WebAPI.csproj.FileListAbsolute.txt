@@ -67,3 +67,7 @@ C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debu
 C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\Scrutor.dll
 C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\ItineRoo.Dto.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.WebAPI\bin\Debug\net6.0\ItineRoo.Dto.pdb

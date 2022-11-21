@@ -8,7 +8,7 @@ namespace ItineRoo.WebAPI.Interfaces
         Task<User?> FindUserByTokenAsync(string verificationToken);
         bool SetRefreshToken(RefreshToken newRefreshToken, User user);
         bool CreateUser(User user);
-        Task Save();
+        int Save();
         string GetMyAuthName();
         bool UpdateUser(User user);
     }
