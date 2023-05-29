@@ -1,0 +1,28 @@
+body {
+    min-height: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.space-bot {
+    margin-bottom: 35px;
+}
+
+.space-top {
+    margin-top: 35px;
+}
+
+/* Title */
+
+h1 {
+    color: #000;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+}

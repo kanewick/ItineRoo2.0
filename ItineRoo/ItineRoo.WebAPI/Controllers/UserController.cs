@@ -1,8 +1,10 @@
-﻿using ItineRoo.WebAPI.Data;
+﻿using ItineRoo.Dto;
+using ItineRoo.WebAPI.Data;
 using ItineRoo.WebAPI.Interfaces;
 using ItineRoo.WebAPI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -37,8 +39,9 @@ namespace ItineRoo.WebAPI.Controllers
         /// GetMe - Gets name from ClaimsPrincipal utilising session cookie based of JWT
         /// </summary>
         /// <returns></returns>
-        [HttpGet, Authorize]
-        public ActionResult<string> GetMe()
+        [HttpGet]
+        [Authorize]
+        public IActionResult GetMe()
         {
             try
             {
@@ -58,20 +61,20 @@ namespace ItineRoo.WebAPI.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("register")]
-        public async Task<IActionResult> Register(UserRegisterRequest request)
+        public async Task<IActionResult> Register(UserRegisterRequestModel request)
         {
             try
             {
                 // Validate user doesnt already exist
                 if (await _userService.FindUserByEmailAsync(request.Email) != null)
                 {
-                    return BadRequest("User already exists.");
+                    return WebApiResponse.Error<string>("User already exists.");
                 }
 
                 // Create the hashed password and salt
                 if (!_tokenService.CreatePasswordHash(request.Password,
                      out byte[] passwordHash,
-                     out byte[] passwordSalt)) return BadRequest("Hashed Password could not be created.");
+                     out byte[] passwordSalt)) return WebApiResponse.Error<string>("Password creation error.");
 
                 // Create the user with the verification token that needs to be verified
                 var user = new User
@@ -84,13 +87,13 @@ namespace ItineRoo.WebAPI.Controllers
                 };
 
                 // Create the user
-                if (!_userService.CreateUser(user)) return BadRequest("User could not be created");
+                if (!_userService.CreateUser(user)) return WebApiResponse.Error<string>("User could not be created");
 
-                return Ok("User successfully created!");
+                return WebApiResponse.Success(request);
             }
             catch (Exception)
             {
-                return BadRequest("Sorry, a problem occured.");
+                return WebApiResponse.Error<string>("Exception occured");
             }
         }
 
@@ -109,32 +112,22 @@ namespace ItineRoo.WebAPI.Controllers
 
                 if (user == null)
                 {
-                    return BadRequest("User not found.");
+                    return WebApiResponse.Error<string>("User not found.");
                 }
 
                 // Hash and salt the requested password and compare to users db password
                 if (!_tokenService.VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
                 {
-                    return BadRequest("Password is incorrect.");
+                    return WebApiResponse.Error<string>("Cannot verify Password hash");
                 }
 
                 // Check if user has been verified
                 if (user.VerifiedAt == null)
                 {
-                    return BadRequest("User is not verified.");
+                    return WebApiResponse.Error<string>("User not verified");
                 }
 
-                // Users logged in successfully now create jwt for authenticated requests
-                // At this point / Generate JWT which will be stored within client for accessing API
-                var jwt = _authTokenService.CreateToken(user, _configuration);
-
-                // Generate session token for browser (JWT)
-                var refreshToken = _authTokenService.GenerateRefreshToken();
-
-                // Set browser cookie from the token
-                _userService.SetRefreshToken(refreshToken, user);
-
-                return Ok(jwt);
+                return WebApiResponse.Success(CreateTokensAndGetJWT(user));
             }
             catch (Exception)
             {
@@ -148,7 +141,7 @@ namespace ItineRoo.WebAPI.Controllers
         /// <param name="token"></param>
         /// <returns></returns>
         [HttpPost("verify")]
-        public async Task<IActionResult> Verify(string token)
+        public async Task<IActionResult> Verify([FromBody]string token)
         {
             try
             {
@@ -158,22 +151,41 @@ namespace ItineRoo.WebAPI.Controllers
                 // If user not found, token is invalid
                 if (user == null)
                 {
-                    return BadRequest("Invalid token.");
+                    return WebApiResponse.Error<string>("Invalid Token.");
                 }
 
                 // Set the verified date to the time they logged in
                 user.VerifiedAt = DateTime.Now;
 
                 // Update the user
-                if (!_userService.UpdateUser(user)) return BadRequest("User could not be updated");
+                if (!_userService.UpdateUser(user)) return WebApiResponse.Error<string>("User could not be updated.");
 
-                return Ok("Verified");
+                return WebApiResponse.Success(new UserVerifyResponseModel
+                {
+                    Token = token
+                });
 
             }
             catch (Exception)
             {
-                return BadRequest("Sorry, a problem occured.");
+                return WebApiResponse.Error<string>("Sorry, a problem occured.");
             }
+        }
+
+        private string CreateTokensAndGetJWT(User user)
+        {
+
+            // Users logged in successfully now create jwt for authenticated requests
+            // At this point / Generate JWT which will be stored within client for accessing API
+            var jwt = _authTokenService.CreateToken(user, _configuration);
+
+            // Generate session token for browser (JWT)
+            var refreshToken = _authTokenService.GenerateRefreshToken();
+
+            // Set browser cookie from the token
+            _userService.SetRefreshToken(refreshToken, user);
+
+            return jwt;
         }
     }
 }

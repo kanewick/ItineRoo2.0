@@ -1,0 +1,12 @@
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\bin\Debug\net6.0\ItineRoo.Dto.deps.json
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\bin\Debug\net6.0\ItineRoo.Dto.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\bin\Debug\net6.0\ItineRoo.Dto.pdb
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.csproj.AssemblyReference.cache
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.AssemblyInfoInputs.cache
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.AssemblyInfo.cs
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.csproj.CoreCompileInputs.cache
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\refint\ItineRoo.Dto.dll
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ItineRoo.Dto.pdb
+C:\Users\Kallen\Documents\inetpub\dev\ItineRoo\ItineRoo\ItineRoo.Dto\obj\Debug\net6.0\ref\ItineRoo.Dto.dll
