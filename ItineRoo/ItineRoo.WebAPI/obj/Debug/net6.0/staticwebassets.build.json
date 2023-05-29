@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "aGIG4t6WmsBULFUibkDUxHo3JA6JsVvK0fT2LaMeB1M=",
+  "Source": "ItineRoo.WebAPI",
+  "BasePath": "_content/ItineRoo.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

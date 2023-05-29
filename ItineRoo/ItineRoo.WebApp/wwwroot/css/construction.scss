@@ -1,0 +1,210 @@
+@import "compass/css3";
+
+@import "compass";
+@import "compass/reset";
+
+// Colors
+$main-color: #00ACDD;
+$link-color: #ED1C24;
+$text-color: #fff;
+
+// Fonts
+$font-family: "Questrial", sans-serif;
+$font-size: 1.2em;
+$line-height: 1em;
+
+// Responsive stuff
+$break-small: 320px;
+$break-medium: 768px;
+$break-large: 1024px;
+
+$fonts-path: "https://gianlucaguarini.github.io/site-under-construction/demos/bower/assets/fonts/";
+
+/**
+*
+* Used to generate responsive styles according to the breakpoint we set into the variables file
+*
+*/
+@mixin respond-to($media) {
+  @if $media == landscape {
+    @media only screen and (orientation: landscape) {
+      @content;
+    }
+  }
+  @else if $media == portrait {
+    @media only screen and (orientation: portrait) {
+      @content;
+    }
+  }
+  @else if $media == mobile {
+    @media only screen and (max-width: $break-small) {
+      @content;
+    }
+  }
+  @else if $media == exclude-mobile {
+    @media only screen and (min-width: $break-small + 1) {
+      @content;
+    }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large) {
+      @content;
+    }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-large + 1) {
+      @content;
+    }
+  }
+  @else if $media == retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
+      @content;
+    }
+  }
+}
+
+/* ==========================================================================
+Helper classes
+========================================================================== */
+
+/*
+* Hide from both screenreaders and browsers: h5bp.com/u
+*/
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/*
+* Hide only visually, but have it available for screenreaders: h5bp.com/v
+*/
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/*
+* Extends the .visuallyhidden class to allow the element to be focusable
+* when navigated to via the keyboard: h5bp.com/p
+*/
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/*
+* Hide visually and from screenreaders, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+* `contenteditable` attribute is included anywhere else in the document.
+* Otherwise it causes space to appear at the top and bottom of elements
+* that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+* `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+html,body {
+  font-family: $font-family;
+  display: table;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-width: 320px;
+  line-height: $line-height;
+  font-size: $font-size;
+  color: $text-color;
+  background: $main-color;
+  overflow: hidden;
+  @include background(radial-gradient(top left, $main-color 0%, darken($main-color, 30%) 100%));
+  @include respond-to("mobile") {
+    font-size: $font-size * 0.8;
+  }
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  &:hover, &:active, &:focus {
+    color: $link-color;
+  }
+}
+
+.main {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  z-index: 1;
+  .inner-content {
+    width: 40%;
+    max-width: 400px;
+    padding: 7% 10%;
+    text-align: center;
+    margin: 0 auto;
+    h1 {
+      margin: 0 0 $line-height;
+    }
+    img {
+      width: 100%;
+      max-height: 100px;
+    }
+    ul {
+      margin: $line-height * 1.4 0 0;
+      li {
+        margin: $line-height * 0.4 $line-height * 0.4 0;
+        font-size: $line-height * 1.4;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Canvas
+#c {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#fork {
+  position:absolute;
+  bottom:20px;
+  left:10px;
+  padding:15px;
+  font-size:11px;
+  background:rgba(0,0,0,0.3);
+}
